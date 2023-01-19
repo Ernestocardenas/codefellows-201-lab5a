@@ -9,8 +9,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-    let sumNum = a + b;
-    return [sumNum, `The sum of ${a} and ${b} is ${sumNum}.`];
+  let sumNum = a + b;
+  return [sumNum, `The sum of ${a} and ${b} is ${sumNum}.`];
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -28,8 +28,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-    let numMult = a * b;
-    return [numMult, `The product of ${a} and ${b} is ${numMult}`];
+  let numMult = a * b;
+  return [numMult, `The product of ${a} and ${b} is ${numMult}`];
 
 }
 
@@ -51,9 +51,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    let sums = (a + b + c);
-    let mult = (a * b * c);
-    return [sums, mult, `${a} and ${b} and ${b} sums to ${sum}.`, `The product of ${a} and ${b} and ${c} is ${mult}.`];
+  let sums = sum(a,b);
+  let sums1 = sums[0];
+  let sums2 = sum(sums1, c);
+  let sums2Num = sums2[0];
+  let mult = multiply(a,b);
+  let mult1 = mult[0];
+  let mult2 = multiply(mult1, c);
+  let multNums = mult2[0];
+
+  return [sums2Num, multNums, `${a} and ${b} and ${c} sum to ${sums2Num}.`, `The product of ${a} and ${b} and ${c} is ${multNums}.`];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -75,12 +82,20 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+  let a = sumArr[0];
+  let b = sumArr[1];
+  let c = sumArr[2];
+  let first2 = sum(a,b);
+  let numfirst2 = first2[0];
+  let total = sum(numfirst2, c);
+  let numTotal = total[0];
+  return [numTotal, `${a},${b},${c} was passed in as an array of numbers, and ${numTotal}is thier sum.`];
 
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 

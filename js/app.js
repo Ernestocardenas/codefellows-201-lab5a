@@ -122,7 +122,7 @@ function multiplyArray(multArr) { //eslint-disable-line
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -146,8 +146,15 @@ Test this function by hand in the console to get it working, and when you think 
 let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-  
+  let lengthArr = dynamicArray.length;
+  let c = 1;
+  for (let i = 0; i < lengthArr; i++){
+    let num = multiply(c, dynamicArray[i])[0];
+    c = num;
+  }
+  return [c, `The numbers ${dynamicArray} have a product of ${c}.`];
 }
+
 
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyAnyArray(testDynamicArray);

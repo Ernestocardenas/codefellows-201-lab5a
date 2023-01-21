@@ -111,7 +111,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+  let a = multArry[0];
+  let b = multArry[1];
+  let c = multArry[2];
+  let first2 = multiply(a,b);
+  let numfirst2 = first2[0];
+  let total = multiply(numfirst2, c);
+  let numTotal = total[0];
+  return [numTotal, `The number ${a},${b},${c} have a product of ${numTotal}.`];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
@@ -139,14 +146,7 @@ Test this function by hand in the console to get it working, and when you think 
 let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-  let a = multArry[0];
-  let b = multArry[1];
-  let c = multArry[2];
-  let first2 = multiply(a,b);
-  let numfirst2 = first2[0];
-  let total = multiply(numfirst2, c);
-  let numTotal = total[0];
-  return [numTotal, `The number ${a},${b},${c} have a product of ${numTotal}.`];
+  
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
